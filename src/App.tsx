@@ -57,7 +57,7 @@ export const App: React.FC = () => {
       .filter(todo => todo.title.toLowerCase().includes(query.toLowerCase()));
   }, [todos, status, query]);
 
-  const handleClouseModal = () => {
+  const handleCloseModal = () => {
     setSelectedTodo(null);
     setUser(null);
   };
@@ -99,7 +99,7 @@ export const App: React.FC = () => {
           todo={selectedTodo}
           user={user}
           isLoading={isUserLoading}
-          onClose={handleClouseModal}
+          onClose={handleCloseModal}
         />
       )}
     </>
