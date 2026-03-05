@@ -15,7 +15,7 @@ export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [isUserLoading, setIsUserLoading] = useState(false);
 
   const [status, setStatus] = useState<'all' | 'completed' | 'active'>('all');
@@ -57,7 +57,7 @@ export const App: React.FC = () => {
       .filter(todo => todo.title.toLowerCase().includes(query.toLowerCase()));
   }, [todos, status, query]);
 
-  const HandleClouseModal = () => {
+  const handleClouseModal = () => {
     setSelectedTodo(null);
     setUser(null);
   };
@@ -99,7 +99,7 @@ export const App: React.FC = () => {
           todo={selectedTodo}
           user={user}
           isLoading={isUserLoading}
-          onClose={HandleClouseModal}
+          onClose={handleClouseModal}
         />
       )}
     </>
